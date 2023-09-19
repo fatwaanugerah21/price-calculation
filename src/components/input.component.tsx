@@ -1,4 +1,4 @@
-import { Input, InputProps } from "@mantine/core";
+import { Input, InputProps, InputWrapperProps } from "@mantine/core";
 import React from "react";
 import { COLORS } from "../constants/colors.contant";
 
@@ -10,7 +10,7 @@ interface IInputComponentProps extends InputProps {
   color?: string;
 }
 
-const InputComponent: React.FC<IInputComponentProps> = React.forwardRef(
+const InputComponent: React.FC<IInputComponentProps | any> = React.forwardRef(
   ({ label, description, error, ...props }, ref) => {
     return (
       <Input.Wrapper error={error} ref={ref as any}>

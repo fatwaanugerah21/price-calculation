@@ -1,5 +1,6 @@
-import { Container } from "@mantine/core";
+import { Anchor, Button, Container, Group } from "@mantine/core";
 import React, { ReactNode } from "react";
+import { ROUTES } from "../constants/routes.constant";
 
 interface IMainLayoutProps {
   children: ReactNode;
@@ -8,7 +9,13 @@ interface IMainLayoutProps {
 const MainLayout: React.FC<IMainLayoutProps> = ({ children }) => {
   return (
     <>
-      <Container>{children}</Container>
+      <Container>
+        <Group>
+          <Anchor href={ROUTES.HOMEPAGE}>Homepage</Anchor>
+          <Anchor href={ROUTES.CALCULATE}>Calculate</Anchor>
+        </Group>
+        {children}
+      </Container>
     </>
   );
 };
